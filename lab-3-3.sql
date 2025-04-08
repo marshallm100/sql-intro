@@ -1,6 +1,10 @@
 -- In the modern era (1960-present), how many regular season games did the best team win each season?
 -- Challenge: Try to include the team's name in the results. Is it accurate?
 
+Select year, max(wins) from teams where year >= 1960 group by year order by max(wins) desc; 
+-- don't use name, you can't trust it!!
+
+
 -- Expected result: 61 rows, starting with
 --
 -- +------+-------------------------------+-----------+
