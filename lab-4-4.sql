@@ -2,6 +2,8 @@
 -- NOTE: need more advanced SQL to answer this question without
 --       raising a warning: "Field of aggregated query neither grouped nor aggregated"
 
+select teams.name, players.first_name, players.last_name, max(stats.home_runs) from teams inner join stats on stats.team_id = teams.id inner join players on players.id = stats.player_id where teams.year = 2019 group by stats.team_id; 
+
 -- Expected result:
 --
 -- +-------------------------------+------------+-------------+----------------------+
